@@ -1,2 +1,2 @@
 # graphql
-Simple graphql api. Using express in node js
+Project to experience how to use graphql in an api.
