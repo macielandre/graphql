@@ -2,7 +2,7 @@
 
 Simple API to learn about graphql possibilities and functionalities. Here i'm using Node Js, Express and Mongodb all togheter to simulate a real development scenario with modularized code.
 
-###Installation
+### Installation
 
 > Installing dependencies
 
@@ -20,7 +20,7 @@ Simple API to learn about graphql possibilities and functionalities. Here i'm us
 
 `$ npm start`
 
-###Features
+### Features
 
 - [x] List all users
 - [x] Search for one user
@@ -28,7 +28,7 @@ Simple API to learn about graphql possibilities and functionalities. Here i'm us
 - [x] Delete an user
 - [x] Update an user
 
-###Links
+### Links
 
 [Linkedin](https://www.linkedin.com/in/andregouveamaciel/)
 
