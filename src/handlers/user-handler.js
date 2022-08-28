@@ -1,18 +1,20 @@
 const router = require('express').Router()
 const { graphqlHTTP } = require('express-graphql')
-const { executableSchema } = require('../configs/graphql')
+const { makeExecutableSchema } = require('@graphql-tools/schema')
 
-const data = {
-    users: [
-        { id: '001', name: 'ANDRE'},
-        { id: '002', name: 'PETER' }
-    ]
-}
+const userTypeDefs = require('../types/user-type-defs')
+const userResolvers = require('../resolvers/user-resolvers')
 
 router.get('/', graphqlHTTP({
-    schema: executableSchema,
-    context: data,
-    graphiql: true,
-}))
+        schema: makeExecutableSchema({ typeDefs: userTypeDefs, resolvers: userResolvers }),
+        graphiql: true,
+    })
+)
+
+router.post('/', graphqlHTTP({
+        schema: makeExecutableSchema({ typeDefs: userTypeDefs, resolvers: userResolvers }),
+        graphiql: true,
+    })
+)
 
 module.exports = router

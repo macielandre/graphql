@@ -8,15 +8,38 @@ class UserModel {
         return connection.model('user', UserSchema, 'users')
     }
 
-    static async getOne(query = {}) {
-        const model = UserModel.getModel()
-        
-        return model.findOne(query).lean()
+    static async insert(data) {
+        const User = UserModel.getModel()
+        const user = new User(data)
+
+        await user.save()
+
+        return user
     }
 
-    static async getAll() {
+    static async findOne(query = {}) {
         const model = UserModel.getModel()
 
-        return model.find({}).lean()
+        return model.findOne(query)
+    }
+
+    static async find(query = {}) {
+        const model = UserModel.getModel()
+
+        return model.find()
+    }
+
+    static async updateOne(query, data) {
+        const model = UserModel.getModel()
+
+        return model.updateOne(query, data)
+    }
+
+    static async deleteOne(query) {
+        const model = UserModel.getModel()
+
+        return model.deleteOne(query)
     }
 }
+
+module.exports = UserModel
